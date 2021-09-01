@@ -1,0 +1,40 @@
+.register-body {
+  height: 120vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background-color: #1D1D37;
+}
+
+.form-container {
+  width: 400px;
+  background-color: #fff;
+}
+
+.form-container h1{
+ margin-top: 40px;
+ margin-left: 40px;
+}
+
+.form-control {
+  margin-top: 40px;
+  margin-left: 40px;
+}
+
+.form-control input {
+  width: 70%;
+  padding: 20px ;
+  border: 1px solid #000;
+  border-radius: 5px;
+  font-size: 16px;
+  margin-top: 10px;
+}
+
+.form-control button {
+  width: 82%;
+  padding: 20px ;
+  margin-bottom: 30px;
+  background-color: #EA4B78;
+  color: #fff;
+  border: 1px solid #EA4B78;
+}

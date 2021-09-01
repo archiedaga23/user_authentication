@@ -1,0 +1,73 @@
+.create-profile-body {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.create-profile-container {
+  width: 600px;
+  margin-bottom: 60px;
+}
+
+.create-profile-body h1 {
+  font-size: 22px;
+  margin-top: 80px;
+  margin-bottom: 20px;
+}
+
+.image-container {
+  display: flex;
+}
+
+.btn-container {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  width: 100%;
+}
+
+.btn-container div {
+  margin-left: 30px;
+  margin-top: 5px;
+  margin-bottom: 10px;
+}
+
+.btn1 {
+    background-color:#1D1D37;
+    border: #1D1D37 solid 2px;
+    border-radius: 5px;
+    font-family: 'Source Sans Pro', sans-serif;
+    font-size: 12px;
+    padding: 10px;
+    color: #fff;
+    width: 120px;
+}
+
+.btn2 {
+  background-color:#fff;
+  border: #1D1D37 solid 1px;
+  border-radius: 5px;
+  font-family: 'Source Sans Pro', sans-serif;
+  font-size: 12px;
+  padding: 10px;
+  color: #1D1D37;
+  width: 120px;
+}
+
+.profile-form-control {
+  margin-top: 30px;
+}
+
+.name-input {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 20px;
+}
+
+.profile-form-control input {
+  width: 90%;
+  padding: 20px;
+  border-radius: 5px;
+  border: 1px solid #1D1D37;
+  margin-top: 5px;
+}
