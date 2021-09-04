@@ -15,7 +15,7 @@ class Topbar extends Component {
   }
 
   render() {
-      const { isAuthenticated, user } = this.props.auth;
+      const { isAuthenticated } = this.props.auth;
 
       const profile = this.props.profile.profile;
       const avatar  = profile ? profile.avatar : null;
