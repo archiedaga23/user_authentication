@@ -8,18 +8,15 @@ import Login from './component/login/Login';
 import Dashboard from './component/dashboard/Dashboard';
 import CreateProfile from './component/create-profile/CreateProfile';
 
-
-import jwt_decode from 'jwt-decode';
+import { BrowserRouter as Router, Route } from 'react-router-dom';
 import setAuthToken from './utils/setAuthToken';
+import jwt_decode from 'jwt-decode';
 
 import { logoutUser, setCurrentUser  } from './action/authAction';
 import { clearCurrentProfile } from './action/profileAction';
 
 import { Provider } from 'react-redux';
-import { BrowserRouter as Router, Route } from 'react-router-dom';
-
 import store from './store';
-
 
 if (localStorage.jwtToken) {
   setAuthToken(localStorage.jwtToken)
