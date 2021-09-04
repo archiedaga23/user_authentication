@@ -1,3 +1,3 @@
-# CRUD Application with JWT authentication, Redux, and Multer.
+# Personal Project using MERN stack.
 
-Code and document samples for the writing a README tutorial.
+## About P
