@@ -1,5 +1,5 @@
-# CRUD application using MERN stack.
+# CRUD app using MERN stack.
 
 ## About
 
-#### This is my personal project using MERN stack which still in progress, I've been studying React/Node a quiet months ago and come up to an idea to create this kind of project enable for me to practice and enhance my JavaScript skills. Indeed, in this project I apply some couple libraries and modules Including JWT authentication, Redux, and Multer.
+#### This is my personal project using MERN stack and Redux. It is a CRUD application that could Create, Read, Update, Delete user profile, and upload user profile avatar using Multer. The project also apply user authorization and private routes using passport JWT authentication. However, this project is still in proccess but I already finish the user login and register functionality with authorization. Currently continuing on this project to create the CRUD operator.
