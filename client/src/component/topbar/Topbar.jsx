@@ -20,8 +20,8 @@ class Topbar extends Component {
       const profile = this.props.profile.profile;
       const avatar  = profile ? profile.avatar : null;
       const image   = avatar  ? 
-      <img src={avatar} style={{ width: '25px',borderRadius:'50%', border: '1px solid white' }}/> :
-      <img src="https://img.icons8.com/ios/50/ffffff/user--v1.png" style={{ width: '25px', border: '2px solid white',borderRadius:'50%'}}/>
+      <img src={avatar} style={{ width: '25px',borderRadius:'50%', border: '1px solid white' }} alt='avatar'/> :
+      <img src="https://img.icons8.com/ios/50/ffffff/user--v1.png" style={{ width: '25px', border: '2px solid white',borderRadius:'50%'}} alt='avatar'/>
      
     const authLinks = (
       <div className="navbarlinks-container">

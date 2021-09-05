@@ -5,7 +5,6 @@ import { loginUser } from '../../action/authAction';
 import PropTypes from 'prop-types';
 import { connect } from 'react-redux';
 import { withRouter } from 'react-router-dom';
-import axios from 'axios';
 
 class Login extends Component {
 
@@ -54,18 +53,26 @@ class Login extends Component {
 
   render() {
 
+    const { username, password } = this.props.errors;
+
     return (
       <div className='register-body'>
         <div className="form-container">
-          <h1>Login !</h1>
+          <h1>Login</h1>
           <form onSubmit={this.onSubmit}>
             <div className="form-control">
               <label>Username</label><br />
               <input type="text" placeholder="Username" name='username' value={this.state.username} onChange={this.onChange}/>
+              <div className="error-handling">
+                {username ? username : ""}
+              </div>
             </div>
             <div className="form-control">
               <label>Password</label><br />
               <input type="text" placeholder="Password" name='password' value={this.state.password} onChange={this.onChange}/>
+              <div className="error-handling">
+                {password ? password : ""}
+              </div>
             </div>
             <div className="form-control">
               <button type='submit'>Login</button>

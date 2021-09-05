@@ -5,10 +5,13 @@ const jwt = require('jsonwebtoken');
 const privateKey = require('../config/key').secretKey;
 const router = express.Router();
 const registerValidation = require('../validation/register');
+const loginValidation = require('../validation/login');
+const { log } = require('npmlog');
+const login = require('../validation/login');
 
 router.post('/register', (req, res) => {
   
-   const {errors, isValid} = registerValidation(req.body);
+   const { errors, isValid } = registerValidation(req.body);
 
    if (!isValid) {
      return res.status(400).json(errors);
@@ -17,7 +20,8 @@ router.post('/register', (req, res) => {
    User.findOne({username: req.body.username})
      .then(user => {
        if (user) {
-         return res.status(400).json({message: 'Username already exist...'});
+         errors.username = 'Username already exist...';
+         return res.status(400).json(errors);
        }
        bcrypt.hash(req.body.password, 10)
          .then((hash) => {
@@ -39,11 +43,17 @@ router.post('/register', (req, res) => {
 
 router.post('/login', (req, res) => {
 
+  const { errors, isValid } = loginValidation(req.body);
+
+  if (!isValid) {
+    return res.status(400).json(errors);
+  }
+
   User.findOne({username: req.body.username})
     .then(user => {
       if (!user) {
-
-        return res.status(404).json({message: 'Username not found...'});
+        errors.username = "Username not found...";
+        return res.status(404).json(errors);
       }
 
       bcrypt.compare(req.body.password, user.password)
@@ -62,14 +72,15 @@ router.post('/login', (req, res) => {
             
           }
           else {
-              return res.status(400).json({ message: 'Incorrect Password...' });
+              errors.password = 'Incorrect Password...';
+              return res.status(400).json(errors);
           }
         })
         .catch(err => {
-          return res.status(400).json({ message: 'Incorrect Password...' });
+          errors.password = 'Incorrect Password...';
+          return res.status(400).json(errors);
         })
     })
-    .catch(err => res.status(500).json({error: 'User not found...'}));
 })
 
 module.exports = router;

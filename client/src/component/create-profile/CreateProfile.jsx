@@ -12,7 +12,7 @@ class CreateProfile extends Component {
             <div className="profile-picture-container">
               <div className='image-container'>
                 <div>
-                  <img src={image} style={{width: '120px'}}/>
+                  <img src={image} style={{width: '120px'}} alt="avatar"/>
                 </div> 
                 <div className="btn-container">
                   <div>

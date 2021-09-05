@@ -21,6 +21,12 @@
   margin-left: 40px;
 }
 
+.error-handling {
+  margin: 10px;
+  font-size: inherit;
+  color: red;
+}
+
 .form-control input {
   width: 70%;
   padding: 20px ;

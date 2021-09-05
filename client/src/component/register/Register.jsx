@@ -55,28 +55,41 @@ class Register extends Component {
   }
 
   render() {
-    const { user } = this.props.auth;
+    const { username, password, firstname, lastname } = this.props.errors;
 
     return (  
       <div className='register-body'>
         <div className="form-container">
           <h1>Let's get Started !</h1>
           <form onSubmit={this.onSubmit}>
-            <div className="form-control">
+            <div className="form-control">   
               <label>Username</label><br />
               <input type="text" placeholder="Username" name='username' value={this.state.username} onChange={this.onChange}/>
+              <div className='error-handling'>
+                {username ? username : ''}
+              </div>
             </div>
+            
             <div className="form-control">
               <label>Password</label><br />
-              <input type="text" placeholder="Password" name='password' value={this.state.password} onChange={this.onChange}/>
+              <input type="password" placeholder="Password" name='password' value={this.state.password} onChange={this.onChange}/>
+              <div className='error-handling'>
+                {password ? password : ''}
+              </div>
             </div>
             <div className="form-control">
               <label>First Name</label><br />
               <input type="text" placeholder="First Name" name='firstname' value={this.state.firstname} onChange={this.onChange}/>
+              <div className='error-handling'>
+                {firstname ? firstname : ''}
+              </div>
             </div>
             <div className="form-control">
               <label>Last Name</label><br />
               <input type="text" placeholder="Last Name" name='lastname' value={this.state.lastname} onChange={this.onChange}/>
+              <div className='error-handling'>
+                {lastname ? lastname : ''}
+              </div>
             </div>
             <div className="form-control">
               <button type='submit'>Sign Up</button>
